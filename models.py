@@ -20,7 +20,8 @@ class User(db.Model):
     house_number = db.Column(db.String(10), unique=False, nullable=False)
     street = db.Column(db.String(80), unique=False, nullable=False)
     zip_code = db.Column(db.String(80), unique=False, nullable=False)
-    nombre_municipio = db.Column(db.String(80), unique=False, nullable=False)
+    municipality = db.Column(db.String(80), unique=False, nullable=False)
+    country = db.Column(db.String(80), unique=False, nullable=False)
     latitude = db.Column(db.String(80), nullable=True)
     longitude = db.Column(db.String(80), nullable=True)
     administrator_id = db.Column(db.Integer, db.ForeignKey('administrator.id'), nullable=True)
@@ -63,7 +64,8 @@ class User(db.Model):
             "house_number": self.house_number,
             "street": self.street,
             "zip_code": self.zip_code,
-            "nombre_municipio": self.nombre_municipio,
+            "municipality": self.municipality,
+            "country": self.country,
             "latitude": self.latitude,
             "longitude": self.longitude,
             "age": self.age, #AGREGADO
@@ -151,7 +153,8 @@ class Billing(db.Model): #AGREGADO informacion de facturacion
     billing_house_number = db.Column(db.String(10), unique=False, nullable=False)
     billing_street = db.Column(db.String(80), unique=False, nullable=False)
     billing_zip_code = db.Column(db.String(80), unique=False, nullable=False)
-    billing_nombre_municipio = db.Column(db.String(80), unique=False, nullable=False)
+    billing_municipality = db.Column(db.String(80), unique=False, nullable=False)
+    billing_country = db.Column(db.String(80), unique=False, nullable=False)
     billing_email = db.Column(db.String(150), unique=False, nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=True)
 
@@ -165,7 +168,8 @@ class Billing(db.Model): #AGREGADO informacion de facturacion
             "billing_house_number": self.billing_house_number,
             "billing_street": self.billing_street,
             "billing_zip_code": self.billing_zip_code,
-            "billing_nombre_municipio": self.billing_nombre_municipio,
+            "billing_municipality": self.billing_municipality,
+            "billing_country": self.billing_country,
             "billing_email": self.billing_email,
             "user_id": self.user_id
         }

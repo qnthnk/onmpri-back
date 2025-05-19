@@ -166,7 +166,8 @@ def sign_up():
     house_number = data.get('house_number')
     street = data.get('street')
     zip_code = data.get('zip_code')
-    nombre_municipio = data.get('nombre_municipio')
+    municipality = data.get('municipality')
+    country = data.get('country')
     latitude = data.get('latitude')
     longitude = data.get('longitude')
     marriage_status = data.get('marriage_status')
@@ -211,7 +212,8 @@ def sign_up():
         house_number=house_number,
         street=street,
         zip_code=zip_code,
-        nombre_municipio=nombre_municipio,
+        municipality=municipality,
+        country=country,
         longitude=longitude,
         latitude=latitude,
         marriage_status=marriage_status,
