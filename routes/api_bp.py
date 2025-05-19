@@ -154,30 +154,38 @@ def sign_up():
     first_name = data.get('first_name')
     first_last_name = data.get('first_last_name')
     second_last_name = data.get('second_last_name')
-    curp = data.get('curp')
     gender = data.get('gender')
     birthdate = data.get('birthdate')
-    blood_type = data.get('blood_type')
-    allergy = data.get('allergy')
-    disease = data.get('disease')
     email = data.get('email')
     password = data.get('password')
-    phone_number = data.get('phone_number')
     facebook = data.get('facebook')
     instagram = data.get('instagram')
     x = data.get('x')
     state = data.get('state')
     colonia_mex = data.get('colonia_mex')
-    street = data.get('street')
-    seccion = data.get('seccion')
     house_number = data.get('house_number')
+    street = data.get('street')
     zip_code = data.get('zip_code')
-    distrito_federal = data.get('distrito_federal')
-    distrito_local = data.get('distrito_local')
     nombre_municipio = data.get('nombre_municipio')
-    tipo_seccion = data.get('tipo_seccion')
     latitude = data.get('latitude')
     longitude = data.get('longitude')
+    marriage_status = data.get('marriage_status')
+    age = data.get('age')
+    occupation = data.get('occupation')
+    phone_number_home = data.get('phone_number_home')
+    phone_number_work = data.get('phone_number_work')
+    phone_number_mobile = data.get('phone_number_mobile')
+    reffered_by = data.get('reffered_by')
+    # curp = data.get('curp')
+    # blood_type = data.get('blood_type')
+    # allergy = data.get('allergy')
+    # disease = data.get('disease')
+    # phone_number = data.get('phone_number')
+    # seccion = data.get('seccion')
+    # distrito_federal = data.get('distrito_federal')
+    # distrito_local = data.get('distrito_local')
+    # tipo_seccion = data.get('tipo_seccion')
+    
 
     # 3. Verificar si el usuario ya existe
     user_exists = User.query.filter_by(email=email).first() 
@@ -191,30 +199,37 @@ def sign_up():
         first_name=first_name,
         first_last_name=first_last_name,
         second_last_name=second_last_name,
-        curp=curp,
         gender=gender,
         birthdate=birthdate,
         email=email,
         password=password_hash,
-        phone_number=phone_number,
         facebook=facebook,
         instagram=instagram,
         x=x,
-        blood_type=blood_type,
-        allergy=allergy,
-        disease=disease,
         state=state,
         colonia_mex=colonia_mex,
         house_number=house_number,
         street=street,
         zip_code=zip_code,
-        seccion=seccion,
-        distrito_federal=distrito_federal,
-        distrito_local=distrito_local,
         nombre_municipio=nombre_municipio,
-        tipo_seccion=tipo_seccion,
         longitude=longitude,
-        latitude=latitude
+        latitude=latitude,
+        marriage_status=marriage_status,
+        age=age,
+        occupation=occupation,
+        phone_number_home=phone_number_home,
+        phone_number_work=phone_number_work,
+        phone_number_mobile=phone_number_mobile,
+        reffered_by=reffered_by
+        # curp=curp,
+        # phone_number=phone_number,
+        # blood_type=blood_type,
+        # allergy=allergy,
+        # disease=disease,
+        # seccion=seccion,
+        # distrito_federal=distrito_federal,
+        # distrito_local=distrito_local,
+        # tipo_seccion=tipo_seccion,
     )  
 
     try:
@@ -412,6 +427,12 @@ def obtener_clima():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
+
+
+
+
+    
 
 @api_bp.route('/addcontact', methods=['POST', 'GET', 'PUT', 'DELETE'])
 # @jwt_required()
