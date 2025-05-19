@@ -130,25 +130,25 @@ def handle_base():
 def sign_up():
     data = request.json
     
-    # # 1. Validación de reCAPTCHA
-    # recaptcha_token = data.get('recaptcha_token')
-    # if not recaptcha_token:
-    #     return jsonify({"message": "Verificación reCAPTCHA requerida"}), 400
+    # 1. Validación de reCAPTCHA
+    recaptcha_token = data.get('recaptcha_token')
+    if not recaptcha_token:
+        return jsonify({"message": "Verificación reCAPTCHA requerida"}), 400
     
-    # # Verificar el token con Google
-    # verify_url = "https://www.google.com/recaptcha/api/siteverify"
-    # payload = {
-    #     'secret': os.environ.get('RECAPTCHA_SECRET_KEY'),
-    #     'response': recaptcha_token
-    # }
-    # response = requests.post(verify_url, data=payload)
-    # result = response.json()
+    # Verificar el token con Google
+    verify_url = "https://www.google.com/recaptcha/api/siteverify"
+    payload = {
+        'secret': os.environ.get('RECAPTCHA_SECRET_KEY'),
+        'response': recaptcha_token
+    }
+    response = requests.post(verify_url, data=payload)
+    result = response.json()
     
-    # if not result.get('success'):
-    #     return jsonify({
-    #         "message": "Verificación reCAPTCHA fallida",
-    #         "error_code": "invalid_recaptcha"
-    #     }), 400
+    if not result.get('success'):
+        return jsonify({
+            "message": "Verificación reCAPTCHA fallida",
+            "error_code": "invalid_recaptcha"
+        }), 400
     
     # 2. Procesar datos del formulario
     first_name = data.get('first_name')
