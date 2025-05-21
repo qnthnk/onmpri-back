@@ -28,7 +28,7 @@ class User(db.Model):
     reset_code = db.Column(db.String(4), nullable=True)
     marriage_status = db.Column(db.String(80), unique=False, nullable=True) #AGREGADO
     age = db.Column(db.String(80), unique=False, nullable=True) #AGREGADO
-    ocuppation = db.Column(db.String(80), unique=False, nullable=True) #AGREGADO
+    occupation = db.Column(db.String(80), unique=False, nullable=True) #AGREGADO
     phone_number_home = db.Column(db.String(80), unique=False, nullable=False) #AGREGADO
     phone_number_work = db.Column(db.String(80), unique=False, nullable=False) #AGREGADO
     phone_number_mobile = db.Column(db.String(80), unique=False, nullable=False) #AGREGADO
@@ -70,7 +70,7 @@ class User(db.Model):
             "longitude": self.longitude,
             "age": self.age, #AGREGADO
             "marriage_status": self.marriage_status, #AGREGADO
-            "ocuppation": self.ocuppation, #AGREGADO
+            "occupation": self.occupation, #AGREGADO
             "phone_number_home": self.phone_number_home, #AGREGADO
             "phone_number_work": self.phone_number_work, #AGREGADO
             "phone_number_mobile": self.phone_number_mobile, #AGREGADO
