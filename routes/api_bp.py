@@ -172,7 +172,7 @@ def sign_up():
     longitude = data.get('longitude')
     marriage_status = data.get('marriage_status')
     age = data.get('age')
-    occupation = data.get('occupation')
+    ocuppation = data.get('ocuppation')
     phone_number_home = data.get('phone_number_home')
     phone_number_work = data.get('phone_number_work')
     phone_number_mobile = data.get('phone_number_mobile')
@@ -218,7 +218,7 @@ def sign_up():
         latitude=latitude,
         marriage_status=marriage_status,
         age=age,
-        occupation=occupation,
+        ocuppation=ocuppation,
         phone_number_home=phone_number_home,
         phone_number_work=phone_number_work,
         phone_number_mobile=phone_number_mobile,
